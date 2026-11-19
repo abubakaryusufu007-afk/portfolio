@@ -1,14 +1,24 @@
 import codingPhoto from '../assets/life-work-coding.png'
+import audiomackPhoto from '../assets/life-work-audiomack.png'
 import posterPhoto from '../assets/life-work-poster.png'
 import stairsPhoto from '../assets/life-work-stairs.png'
 import streetPhoto from '../assets/life-work-street.png'
 import './life-and-work.css'
 
 const photos = [
-  { src: posterPhoto, alt: 'A motivational poster on a wall' },
-  { src: streetPhoto, alt: 'A street-side food stand on a sunny day' },
-  { src: stairsPhoto, alt: 'A staircase inside a building' },
-  { src: codingPhoto, alt: 'A laptop displaying code on a desk' },
+  { src: posterPhoto, alt: 'A motivational poster on a wall', wide: false },
+  {
+    src: streetPhoto,
+    alt: 'A street-side food stand on a sunny day',
+    wide: false,
+  },
+  { src: stairsPhoto, alt: 'A staircase inside a building', wide: false },
+  { src: codingPhoto, alt: 'A laptop displaying code on a desk', wide: false },
+  {
+    src: audiomackPhoto,
+    alt: 'Audiomack music player and recommendations',
+    wide: true,
+  },
 ]
 
 function LifeAndWork() {
@@ -23,7 +33,10 @@ function LifeAndWork() {
       </h2>
       <div className="life-and-work-grid">
         {photos.map((photo) => (
-          <figure className="life-and-work-photo" key={photo.src}>
+          <figure
+            className={`life-and-work-photo${photo.wide ? ' life-and-work-photo--wide' : ''}`}
+            key={photo.src}
+          >
             <a
               className="life-and-work-photo-link"
               href={photo.src}

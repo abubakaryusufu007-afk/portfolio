@@ -1,0 +1,56 @@
+:root {
+  --bg: #0a0a0a;
+  --surface: #111111;
+  --text: #f5f5f5;
+  --text-muted: #a1a1a1;
+  --border: #292929;
+  --accent: #d4d4d4;
+  --font-body: "Geist", Inter, system-ui, sans-serif;
+  --font-size-body: 0.875rem;
+  --font-size-small: 0.8125rem;
+  --font-size-label: 0.6875rem;
+
+  color-scheme: dark;
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  color: var(--bg);
+  background: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

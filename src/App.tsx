@@ -4,6 +4,7 @@ import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Education from './components/Education'
 import Listening from './components/Listening'
+import LifeAndWork from './components/LifeAndWork'
 import {
   education,
   experience,
@@ -22,6 +23,7 @@ function App() {
         <WelcomeScreen profile={profile} />
         <Skills items={stack} />
         <Experience items={experience} />
+        <LifeAndWork />
         <Projects items={projects} />
         <Education education={education} />
         <Listening />

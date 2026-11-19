@@ -65,16 +65,14 @@
 }
 
 .experience-list,
-.projects-grid,
-.awards-grid {
+.projects-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
 }
 
 .experience-entry,
 .project-entry,
-.education-entry,
-.award-card {
+.education-entry {
   min-width: 0;
   padding: 1rem 0;
   border-bottom: 1px solid var(--border);
@@ -82,15 +80,13 @@
 
 .experience-entry:first-child,
 .project-entry:first-child,
-.education-entry:first-child,
-.award-card:first-child {
+.education-entry:first-child {
   border-top: 1px solid var(--border);
 }
 
 .experience-entry h3,
 .project-entry h3,
-.education-entry h3,
-.award-card h3 {
+.education-entry h3 {
   margin: 0;
   color: var(--text);
   font-size: var(--font-size-body);
@@ -107,8 +103,7 @@
 
 .experience-entry p,
 .project-entry p,
-.education-entry p,
-.award-card p {
+.education-entry p {
   margin: 0.4rem 0 0;
   color: var(--text-muted);
   font-size: var(--font-size-small);
@@ -145,28 +140,6 @@
   margin-left: 0.65rem;
   color: #666;
   content: "·";
-}
-
-.sample-note {
-  margin: 0 0 0.75rem;
-  color: var(--text-muted);
-  font-size: var(--font-size-small);
-  line-height: 1.6;
-}
-
-.award-type,
-.award-year {
-  color: var(--text-muted);
-  font-size: var(--font-size-label);
-}
-
-.award-type {
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.award-card h3 {
-  margin-top: 0.4rem;
 }
 
 .site-footer {

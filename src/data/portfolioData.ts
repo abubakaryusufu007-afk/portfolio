@@ -17,13 +17,6 @@ export interface EducationItem {
   description: string
 }
 
-export interface AwardItem {
-  type: string
-  title: string
-  issuer: string
-  year: string
-}
-
 export interface ProjectItem {
   name: string
   description: string
@@ -49,7 +42,6 @@ export const navigationLinks = [
   { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Awards', href: '#awards' },
   { label: 'Education', href: '#education' },
   { label: 'Listening', href: '#listening' },
 ]
@@ -127,27 +119,6 @@ export const projects: ProjectItem[] = [
     name:'africa\'s talking open hackathon',
     description:'A hackathon organized by Africa\'s Talking, where I was part of a team that built a project called Estate Dues Ledger.',
   }
-]
-
-export const awards: AwardItem[] = [
-  {
-    type: 'Hackathon',
-    title: 'Sample hackathon award',
-    issuer: 'Award organizer',
-    year: 'Year',
-  },
-  {
-    type: 'Certification',
-    title: 'Sample certification',
-    issuer: 'Issuing organization',
-    year: 'Year',
-  },
-  {
-    type: 'Academic',
-    title: 'Sample academic recognition',
-    issuer: 'Institution',
-    year: 'Year',
-  },
 ]
 
 export const stack = [

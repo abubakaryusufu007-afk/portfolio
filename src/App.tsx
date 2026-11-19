@@ -2,11 +2,9 @@ import WelcomeScreen from './components/WelcomeScreen'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
-import Awards from './components/Awards'
 import Education from './components/Education'
 import Listening from './components/Listening'
 import {
-  awards,
   education,
   experience,
   profile,
@@ -25,7 +23,6 @@ function App() {
         <Skills items={stack} />
         <Experience items={experience} />
         <Projects items={projects} />
-        <Awards items={awards} />
         <Education education={education} />
         <Listening />
       </main>

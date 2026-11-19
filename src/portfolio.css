@@ -42,6 +42,9 @@
 
 .profile-links a,
 .project-links a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
   text-underline-offset: 0.2em;
   transition: color 160ms ease;
 }
@@ -159,15 +162,26 @@ a:focus-visible {
 @media (max-width: 520px) {
   .portfolio {
     width: calc(100% - 1.5rem);
-    padding-top: 3rem;
+    padding-top: 2.5rem;
   }
 
   .content-section {
-    margin-top: 2.5rem;
+    margin-top: 2.25rem;
+  }
+
+  .profile-links {
+    column-gap: 0.5rem;
   }
 
   .site-footer {
     width: calc(100% - 1.5rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .portfolio,
+  .site-footer {
+    width: calc(100% - 1rem);
   }
 }
 

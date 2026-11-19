@@ -1,8 +1,8 @@
-import codingPhoto from '../assets/life-work-coding.png'
-import audiomackPhoto from '../assets/life-work-audiomack.png'
-import posterPhoto from '../assets/life-work-poster.png'
-import stairsPhoto from '../assets/life-work-stairs.png'
-import streetPhoto from '../assets/life-work-street.png'
+import codingPhoto from '../assets/life-work-coding.jpg'
+import audiomackPhoto from '../assets/life-work-audiomack.jpg'
+import posterPhoto from '../assets/life-work-poster.jpg'
+import stairsPhoto from '../assets/life-work-stairs.jpg'
+import streetPhoto from '../assets/life-work-street.jpg'
 import './life-and-work.css'
 
 const photos = [

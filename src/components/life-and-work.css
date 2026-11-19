@@ -52,7 +52,12 @@
 
 @media (max-width: 520px) {
   .life-and-work-section {
-    padding: 1rem;
+    margin-top: 2.25rem;
+    padding: 0.75rem;
+  }
+
+  .life-and-work-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

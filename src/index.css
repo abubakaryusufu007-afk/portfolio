@@ -30,7 +30,6 @@ html {
 }
 
 body {
-  min-width: 320px;
   min-height: 100vh;
   margin: 0;
   background: var(--bg);
@@ -52,5 +51,13 @@ a {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --font-size-body: 0.9375rem;
+    --font-size-small: 0.875rem;
+    --font-size-label: 0.75rem;
   }
 }

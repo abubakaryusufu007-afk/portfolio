@@ -116,7 +116,7 @@ function toTrack(track: LastFmTrack): Track | null {
   }
 }
 
-export default async function handler(request: Request) {
+async function handler(request: Request) {
   if (request.method !== 'GET') {
     return sendJson(
       405,
@@ -170,4 +170,4 @@ export default async function handler(request: Request) {
   }
 }
 
-export const config = { path: '/api/listening' }
+export default { fetch: handler }

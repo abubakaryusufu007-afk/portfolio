@@ -102,7 +102,7 @@ export const education: EducationItem = {
   degree: 'B.Sc. Computer Science',
   institution: 'Federal University Dutse',
   description:
-  'Currently Level 300. CGPA: 4.27/5.0. Member of NACOS (Nigerian Association of Computer Science Students).',
+  'Currently Level 300. GPA: 4.27/5.0. Member of NACOS (Nigerian Association of Computer Science Students).',
 }
 
 export const projects: ProjectItem[] = [

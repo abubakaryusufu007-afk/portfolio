@@ -126,7 +126,7 @@ export default async function handler(request: Request) {
 
   const apiKey = process.env.LASTFM_API_KEY
   const user = process.env.LASTFM_USER
-
+  console.log("LASTFM_API_KEY set:", Boolean(apiKey), "| LASTFM_USER set:", Boolean(user))
   if (!apiKey || !user) {
     return sendJson(503, {
       error: 'Listening data is not configured yet.',

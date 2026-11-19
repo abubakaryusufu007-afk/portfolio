@@ -8,8 +8,7 @@
     "dev:netlify": "netlify dev",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview",
-    "spotify:auth": "node --env-file=.env.local scripts/spotify-auth.mjs"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.3.1",

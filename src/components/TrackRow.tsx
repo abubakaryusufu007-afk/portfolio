@@ -11,7 +11,7 @@ function TrackRow({ track }: TrackRowProps) {
       href={track.url}
       target="_blank"
       rel="noreferrer"
-      aria-label={`Listen to ${track.title} by ${track.artist} on Spotify`}
+      aria-label={`Listen to ${track.title} by ${track.artist}`}
     >
       {track.cover ? (
         <img className="listening-row-cover" src={track.cover} alt="" />

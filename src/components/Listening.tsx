@@ -19,6 +19,10 @@ function Listening() {
       try {
         const response = await fetch('/api/listening')
         if (!response.ok) throw new Error('Listening request failed')
+        const contentType = response.headers.get('content-type')
+        if (!contentType?.includes('application/json')) {
+          throw new Error('Listening response is not JSON')
+        }
 
         const data = (await response.json()) as ListeningData
         if (active) setState({ status: 'ready', data })

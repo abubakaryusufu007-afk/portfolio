@@ -62,17 +62,32 @@ async function fetchLastFm(
     format: 'json',
     limit: String(limit),
   })
-  const response = await fetch(`${endpoint}?${params}`, {
-    signal: AbortSignal.timeout(10_000),
-  })
-
-  if (!response.ok) {
-    throw new Error('Last.fm request failed')
+  let response: Response
+  try {
+    response = await fetch(`${endpoint}?${params}`, {
+      signal: AbortSignal.timeout(10_000),
+    })
+  } catch (error) {
+    const reason =
+      error instanceof Error && error.name === 'TimeoutError'
+        ? 'timed out'
+        : 'network error'
+    throw new Error(`${method}: ${reason}`)
   }
 
-  const data = (await response.json()) as LastFmResponse
+  if (!response.ok) {
+    throw new Error(`${method}: HTTP ${response.status}`)
+  }
+
+  let data: LastFmResponse
+  try {
+    data = (await response.json()) as LastFmResponse
+  } catch {
+    throw new Error(`${method}: invalid JSON response`)
+  }
+
   if (data.error) {
-    throw new Error('Last.fm returned an API error')
+    throw new Error(`${method}: API error ${data.error}`)
   }
 
   return data
@@ -126,7 +141,12 @@ async function handler(request: Request) {
 
   const apiKey = process.env.LASTFM_API_KEY
   const user = process.env.LASTFM_USER
-  console.log("LASTFM_API_KEY set:", Boolean(apiKey), "| LASTFM_USER set:", Boolean(user))
+  console.log(
+    'LASTFM_API_KEY set:',
+    Boolean(apiKey),
+    '| LASTFM_USER set:',
+    Boolean(user),
+  )
   if (!apiKey || !user) {
     return sendJson(503, {
       error: 'Listening data is not configured yet.',
@@ -163,7 +183,10 @@ async function handler(request: Request) {
 
     cachedResult = { data: result, expiresAt: Date.now() + cacheDuration }
     return sendJson(200, result, cacheHeader)
-  } catch {
+  } catch (error) {
+    const reason =
+      error instanceof Error ? error.message : 'Unknown Last.fm error'
+    console.error('Listening request failed:', reason)
     return sendJson(502, {
       error: 'Last.fm is temporarily unavailable. Please try again later.',
     })

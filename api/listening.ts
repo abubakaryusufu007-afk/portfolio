@@ -189,6 +189,7 @@ async function handler(request: Request) {
     console.error('Listening request failed:', reason)
     return sendJson(502, {
       error: 'Last.fm is temporarily unavailable. Please try again later.',
+      diagnostic: reason,
     })
   }
 }
